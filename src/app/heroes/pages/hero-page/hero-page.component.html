@@ -1,0 +1,61 @@
+@if(!hero){
+
+    <mat-spinner class="m-auto h-28rem">
+
+    </mat-spinner>
+}
+@else{
+    <div class="mt-3">
+        <button mat-raised-button color="primary" (click)="backToList()">
+            Regresar
+         </button>
+    </div>
+    <div class="grid m-1">
+        <div class="col-12 md:col-6 align-items-center py-5">
+            <mat-card>
+                <mat-card-header class="mb-3">
+                    <mat-card-title>
+                        {{hero.alter_ego}}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        {{hero.superhero}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <img class="p-4" [src]="hero | heroImage" alt="hero.superhero" mat-card-image >
+            </mat-card>
+        </div>
+        <div class="col-12 md:col-6 py-5">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Información del heroe
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        {{hero.superhero}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-list>
+                        <mat-list-item>
+                            <strong>Primera aparición: </strong>
+                            {{hero.first_appearance}}
+                        </mat-list-item>
+                        <mat-list-item>
+                            <strong>Personas que fueron el heroe: </strong>
+                            {{hero.characters}}
+                        </mat-list-item>
+                        <mat-list-item>
+                            <strong>Editorial: </strong>
+                            {{hero.publisher}}
+                        </mat-list-item>
+                        <mat-list-item>
+                            <strong>Alter ego: </strong>
+                            {{hero.alter_ego}}
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>    
+ 
+}
